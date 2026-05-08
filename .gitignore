@@ -1,0 +1,6 @@
+.claude/runtime/
+workspace/mcp/data/
+workspace/mcp/.venv/
+__pycache__/
+*.pyc
+*.db
