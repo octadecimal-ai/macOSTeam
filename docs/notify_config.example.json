@@ -1,0 +1,52 @@
+{
+  "_comment": "Skopiuj do ~/.llm/notify_config.json i dostosuj do własnych preferencji.",
+  "_sounds": "Dostępne dźwięki macOS: Basso, Blow, Bottle, Frog, Funk, Glass, Hero, Morse, Ping, Pop, Purr, Sosumi, Submarine, Tink",
+
+  "global": {
+    "status": "active",
+    "log_to_db": true,
+    "db_path": "/workspace/workspace/mcp/data/knowledge.db"
+  },
+
+  "cost_alert": {
+    "status": "active",
+    "threshold_pln": 20.0,
+    "sound": "Ping"
+  },
+
+  "levels": {
+    "info": {
+      "status": "active",
+      "sound": "Glass",
+      "blocking": false,
+      "subtitle_prefix": ""
+    },
+    "routing": {
+      "status": "active",
+      "sound": "Purr",
+      "blocking": false,
+      "subtitle_prefix": "→"
+    },
+    "escalation1": {
+      "status": "active",
+      "sound": "Basso",
+      "blocking": false,
+      "subtitle_prefix": "⚠️"
+    },
+    "escalation2": {
+      "status": "active",
+      "sound": "Sosumi",
+      "blocking": true,
+      "actions": ["TAK", "NIE"],
+      "subtitle_prefix": "🚨"
+    },
+    "escalation3": {
+      "status": "active",
+      "sound": "Sosumi",
+      "blocking": true,
+      "requires_sudo": true,
+      "actions": ["TAK", "NIE"],
+      "subtitle_prefix": "🔴"
+    }
+  }
+}
