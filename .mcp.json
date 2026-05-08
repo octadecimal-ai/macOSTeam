@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "team-knowledge": {
+      "type": "stdio",
+      "command": "/Users/experimental-lab/workspace/mcp/.venv/bin/python",
+      "args": ["/Users/experimental-lab/Lab/MacOSTeam/workspace/mcp/server.py"],
+      "env": {}
+    }
+  }
+}
