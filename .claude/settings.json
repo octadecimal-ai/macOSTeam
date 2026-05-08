@@ -1,0 +1,38 @@
+{
+  "_comment": "Hooki projektu — egzekwują standardy zespołowe.",
+  "hooks": {
+    "SessionStart": [
+      {"hooks": [
+        {"type": "command", "command": ".claude/hooks/session_start_context.sh"},
+        {"type": "command", "command": ".claude/hooks/watchdog_init.sh"}
+      ]}
+    ],
+    "UserPromptSubmit": [
+      {"hooks": [{"type": "command", "command": ".claude/hooks/watchdog_userprompt_scan.sh"}]}
+    ],
+    "ConfigChange": [
+      {"hooks": [{"type": "command", "command": ".claude/hooks/watchdog_config_change.sh"}]}
+    ],
+    "PreToolUse": [
+      {"hooks": [{"type": "command", "command": ".claude/hooks/watchdog_guard_pretool.sh"}]}
+    ],
+    "PostToolBatch": [
+      {"hooks": [{"type": "command", "command": ".claude/hooks/post_tool_batch_log.sh"}]}
+    ],
+    "PreCompact": [
+      {"hooks": [{"type": "command", "command": ".claude/hooks/pre_compact_extract.sh"}]}
+    ],
+    "SubagentStop": [
+      {"hooks": [{"type": "command", "command": ".claude/hooks/subagent_stop_promote.sh"}]}
+    ],
+    "SessionEnd": [
+      {"hooks": [{"type": "command", "command": ".claude/hooks/session_end_digest.sh"}]}
+    ],
+    "Stop": [
+      {"hooks": [
+        {"type": "command", "command": ".claude/hooks/watchdog_check_escalation.sh"},
+        {"type": "command", "command": ".claude/hooks/stop_notify.sh"}
+      ]}
+    ]
+  }
+}
